@@ -9,12 +9,10 @@ const ingredients = [
 
 const ul = document.querySelector('ul');
 
-const newArray = [];
-
-ingredients.forEach(ingredient => {
+const newArray = ingredients.map(ingredient => {
     const liEl = document.createElement('li');
     liEl.textContent = ingredient;
-    newArray.push(liEl);
+    return liEl;
 });
 
 ul.append(...newArray);

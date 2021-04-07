@@ -1,14 +1,12 @@
 const inputName = document.querySelector('#name-input');
 const outputName = document.querySelector('#name-output');
 
-inputName.oninput = function () {
-    outputName.innerHTML = inputName.value;
-};
+inputName.addEventListener('input', onInputName);
 
-function onInputBlur() {
-    if (inputName.value === '') {
+function onInputName() {
+    if (inputName.value !== '') {
+        outputName.textContent = inputName.value;
+    } else {
         outputName.textContent = 'незнакомец';
     }
 };
-
-inputName.addEventListener('blur', onInputBlur);
